@@ -1,0 +1,141 @@
+<div class="dashboard"><app-menu></app-menu></div>
+<div class="container">
+  <!-- filter -->
+  <div class="filter">
+     <form action="" class="form-filter">
+      <h4>Filter</h4>
+        <div class="dropdown" >
+          <select class="form-select" id="amount">
+            <option selected>Location</option>
+            <option value="London">Mill A</option>
+            <option value="London">Mill B</option>
+            <option value="Moscow">Mill C</option>
+            <option value="Dubai">Mill D</option>
+          </select>
+        </div>
+        <span >
+         <input  class="form-control" name="TN" placeholder="c-3045" >
+        </span>
+        <div class="dropdown">
+          <select class="form-select" id="amount">
+            <option selected>Stop Category</option>
+            <option value="London">BreakDown</option>
+             <option value="London">Maintenance</option>
+            <option value="Moscow">Plan</option>
+            <option value="Dubai">Other</option>
+          </select>
+        </div>
+        <span >
+           <input  class="form-control" name="startTime" placeholder="Start Time" type="datetime-local" >
+        </span>
+        <span >
+          <input  class="form-control" name="stopTime" placeholder="Stop Time" type="datetime-local">
+        </span>
+        <div class="dropdown" >
+          <select class="form-select" id="amount" >
+            <option selected>Carried Out By</option>
+            <option value="London">BreakDown</option>
+            <option value="London">Maintenance</option>
+            <option value="Moscow">Plan</option>
+            <option value="Dubai">Other</option>
+          </select>
+        </div>
+    </form>
+  </div>
+  <!-- add data and list and charts -->
+<div class="section">
+  <!-- totals stopping mills and charts -->
+  <div class="charts">
+    <!-- total stopping mills -->
+      <div class="analistys">
+    <div class="totals"><a href="#"><svg><rect></rect></svg>Mill A<h6>12 : 30</h6></a></div>
+    <div class="totals"><a href="#"><svg><rect></rect></svg>Mill B<h6>12 : 30</h6></a></div>
+    <div class="totals"><a href="#"><svg><rect></rect></svg>Mill C<h6>12 : 30</h6></a></div>
+    <div class="totals"><a href="#"><svg><rect></rect></svg>Mill D<h6>12 : 30</h6></a></div>
+  </div>
+  <!-- charts -->
+  <div class="totals">
+    <div class="totalStopingMills" style="margin-right: 40;"><highcharts-chart [Highcharts]="Highcharts" [options]="chart1"></highcharts-chart></div>
+    <div class="totalStopingMills" style="margin-left: 40;"><highcharts-chart [Highcharts]="Highcharts" [options]="chart2"></highcharts-chart></div>
+  </div>
+  </div>
+
+  <!-- data entry -->
+<div class="addData">  
+  <div class="dataentry" style=" margin: 0; font-size: 12px;">
+<form (ngSubmit)="addData()">
+<h4 style="font-size: 16px; text-align: center;">Add New Data</h4>
+<div class="dropdown" style="margin-bottom: 10px;">
+<label for="amount" class="form-label" style="font-size: 12px;">Location:</label>
+<select [(ngModel)]="newData.location" class="form-select" id="amount" style="font-size: 12px; padding: 5px;">
+  <option selected *ngFor="let loc of locations" [value]="loc">{{loc}}</option>
+</select>
+</div>
+<span style="display: block; margin-bottom: 10px;">
+TN: <input [(ngModel)]="newData.tn" class="form-control" name="TN" placeholder="c-3045" style="font-size: 12px; padding: 5px;">
+</span>
+<div class="dropdown" style="margin-bottom: 10px;">
+<label for="amount" class="form-label" style="font-size: 12px;">Stop Category:</label>
+<select [(ngModel)]="newData.stopCategory" class="form-select" id="amount" style="font-size: 12px; padding: 5px;">
+  <option selected *ngFor="let category of stopCategorys" [value]="category">{{category}}</option>
+</select>
+</div>
+<span style="display: block; margin-bottom: 10px;">
+Start Time: <input [(ngModel)]="newData.startTime" class="form-control" name="startTime" placeholder="Start Time" type="datetime-local" required style="font-size: 12px; padding: 5px;">
+</span>
+<span style="display: block; margin-bottom: 10px;">
+Stop Time: <input [(ngModel)]="newData.stopTime" class="form-control" name="stopTime" placeholder="Stop Time" type="datetime-local" required style="font-size: 12px; padding: 5px;">
+</span>
+<div class="dropdown" style="margin-bottom: 10px;">
+<label for="amount" class="form-label" style="font-size: 12px;">Carried Out By:</label>
+<select [(ngModel)]="newData.carriedOutBy" class="form-select" id="amount" style="font-size: 12px; padding: 5px;">
+  <option selected *ngFor="let carried of carriedOutBys" [value]="carried">{{carried}}</option>
+</select>
+</div>
+<span style="display: block; margin-bottom: 10px;">
+Comment: <input [(ngModel)]="newData.comment" class="form-control" name="comment" placeholder="Comment" style="font-size: 12px; padding: 5px;">
+</span>
+<button (click)="addData()" class="btn btn-primary" style="font-size: 12px; padding: 5px 10px; align-items: center;">Save</button>
+</form>
+</div>
+</div>
+</div> 
+
+<!-- table list  -->
+<div class="list">
+    <table class="table table-borderless main">
+      <thead>
+        <tr class="head text-center">
+          <th scope="col">Nr.</th>
+          <th scope="col">Location</th>
+          <th scope="col">TN</th>
+          <th scope="col">Stop category</th>
+          <th scope="col">Start time</th>
+          <th scope="col">Stop time</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Carried out by</th>
+          <th scope="col">Comment</th>
+          <th scope="col">Editor</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+     </thead>
+
+<!-- list body -->
+    <tbody>
+      <tr class="rounded bg-white text-center"  *ngFor="let item of stoppageList; let i = index">
+        <td class="order-color">{{i+1}}</td>
+        <td>{{item.location}}</td>
+        <td class="d-flex align-items-center">{{item.tn}}</td>
+        <td><div class=""><button class="btn btn-warning btn-sm " type="button" >{{item.stopCategory}}</button></div></td>
+        <td>{{item.startTime}}</td>
+        <td>{{item.stopTime}}</td>
+        <td><div class=""><button class="btn btn-primary btn-sm" type="button">{{item.duration}}</button></div></td>
+        <td>{{item.carriedOutBy}}</td>
+        <td>{{item.comment}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
