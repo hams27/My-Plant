@@ -1,9 +1,14 @@
-.filter{
+.container, .nav {
+  margin-left: 70px;
+}
+
+.filter {
   margin: 10px;
 }
-.form-filter{
+
+.form-filter {
   background-color: white;
-  display:flex;
+  display: flex;
   flex-direction: row;
   gap: 10px;
   text-align: center;
@@ -11,109 +16,173 @@
   align-items: center;
   margin-left: 20px;
   padding: 15px;
-  border-radius:15px;
+  border-radius: 15px;
 }
-.dropdown ,span{
+
+.dropdown, span {
   width: 155px;
 }
-.main{
-	border-collapse: separate !important;
+
+.main {
+  border-collapse: separate !important;
   border-spacing: 0 11px !important;
 }
-.section{
+
+.section {
   display: flex;
   justify-content: space-between;
   margin-left: 50px;
   gap: 50px;
 }
-.analistys{
+
+.analistys {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: center;
   margin-bottom: 150px;
 }
-a{
+
+a {
   margin-right: 20px;
-  position:absolute;
-  width:130px;
-  height:200px;
-  line-height:60px;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:20px;
-  color:black;
-  text-align:center;
+  position: absolute;
+  width: 130px;
+  height: 200px;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: black;
+  text-align: center;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  /* text-align: center; */
 }
-a svg, a svg rect{
-  position:absolute;
-  top:0;
-  left:0;
+
+a svg, a svg rect {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 150px;
-  height:140px;
-  fill:transparent;
+  height: 140px;
+  fill: transparent;
 }
 
-a svg rect{
-  stroke:#00e2ff;
-  stroke-width:4;
-  transition:2s;
-  stroke-dasharray:60 200;
-  stroke-dashoffset:300;
-}
-a:hover svg rect{
-  stroke:darkblue;
-  stroke-dasharray:200 60;
-  stroke-dashoffset:0;
+a svg rect {
+  stroke: #00e2ff;
+  stroke-width: 4;
+  transition: 2s;
+  stroke-dasharray: 60 200;
+  stroke-dashoffset: 300;
 }
 
-.dataentry{
+a:hover svg rect {
+  stroke: darkblue;
+  stroke-dasharray: 200 60;
+  stroke-dashoffset: 0;
+}
+
+.dataentry {
   background-color: white;
   padding: 10px;
   border-radius: 25px;
 }
-.list{
+
+.list {
   background-color: white;
   padding: 10px;
   border-radius: 25px;
-  width:max-content;
+  width: max-content;
   margin-top: 30px;
-  margin-left:50px;
+  margin-left: 50px;
 }
-.totals{
+
+.totals {
   text-align: center;
   display: flex;
-  gap:15px;
+  gap: 15px;
   margin-top: 10px;
 }
-tr{
-  
+
+tr {
   border: 1px solid #eee;
 }
-.head th{
+
+.head th {
   font-weight: 500;
 }
-tr:nth-child(3) { border: solid thin; }
+
+tr:nth-child(3) {
+  border: solid thin;
+}
+
 .form-check-input:focus {
   border-color: #8bbafe;
   outline: 0;
   box-shadow: none;
 }
-.btn{ 
+
+.btn {
   height: 27px;
   line-height: 11px;
   color: #fff;
 }
+
 .form-check-input {
   margin-top: 3px;
 }
+
 .btn:focus {
-  color: #fff; 
+  color: #fff;
   box-shadow: none !important;
 }
-.order-color{
+
+.order-color {
   color: blue;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container, .nav {
+    margin-left: 20px;
+  }
+
+  .form-filter {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  .section {
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 10px;
+  }
+
+  .analistys {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+  }
+
+  a {
+    width: 100px;
+    height: 150px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown, span {
+    width: 100px;
+  }
+
+  .form-filter {
+    padding: 10px;
+  }
+
+  .section {
+    gap: 10px;
+  }
+
+  .analistys {
+    grid-template-columns: 1fr;
+  }
 }

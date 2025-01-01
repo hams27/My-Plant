@@ -1,0 +1,50 @@
+.card {
+    width: 100%;
+    max-width: 1100px; /* الحد الأقصى للعرض */
+    margin: 20px auto; /* توسيط العنصر */
+    border-radius: 25px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 15px; /* إضافة مساحة داخلية */
+}
+
+.nav {
+    margin: 0 auto; /* توسيط العنصر */
+    text-align: center; /* ضبط النصوص في المنتصف */
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 1024px) {
+    .card {
+        max-width: 900px;
+        margin: 15px auto;
+    }
+    
+    .nav {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 600px;
+        padding: 10px;
+    }
+    
+    .nav {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 90%; /* استخدام نسبة العرض */
+        padding: 8px;
+    }
+    
+    .nav {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
