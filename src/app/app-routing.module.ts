@@ -9,6 +9,8 @@ import { MenuComponent } from './menu/menu.component';
 import { AnalysticsComponent } from './analystics/analystics.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotficationsComponent } from './notfications/notfications.component';
+import { NavComponent } from './nav/nav.component';
+import { HistoryComponent } from './history/history.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:'home' ,component:HomeComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'menu',component:MenuComponent},
   {path:'analystics',component:AnalysticsComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'notfications',component:NotficationsComponent}
+  {path:'notfications',component:NotficationsComponent},
+  {path:'nav',component:NavComponent},
+  {path:'history',component:HistoryComponent}
 ];
 
 @NgModule({

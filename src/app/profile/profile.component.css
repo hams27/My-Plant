@@ -1,0 +1,122 @@
+.tick {
+    position: relative;
+    top: 0.5vh;
+}
+
+.main {
+    height: 900px;
+    width: 900px;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    top: 15vh;
+    padding: 3vh;
+    max-width: 100%; /* لتجنب تجاوز العرض */
+    box-sizing: border-box;
+}
+
+.picture img {
+    height: 8vw;
+    width: 8vw;
+    position: relative;
+    top: 1vw;
+    max-width: 100%; /* للتأكد من أن الصورة لا تتجاوز العرض */
+}
+
+.add {
+    background-color: #4c43a0;
+    position: relative;
+    top: 3vw;
+    right: 2vw;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.details p {
+    position: relative;
+    top: 1vw;
+}
+
+.name i {
+    color: blue;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    border: 2px solid white;
+}
+
+.table {
+    margin-top: 2vw;
+}
+
+.edit {
+    background-color: #3b419c;
+    width: 90%;
+    color: #fff !important;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 425px) {
+    .main {
+        width: 100vw;
+        height: auto;
+        padding: 5vw 2vw; /* زيادة المسافة الداخلية */
+    }
+
+    .picture img {
+        height: 40vw;
+        width: 40vw;
+        position: relative;
+        left: 5vw;
+    }
+
+    .details p {
+        position: relative;
+        top: 5vw;
+    }
+
+    .add {
+        position: relative;
+        top: 8vw;
+        right: 0;
+        font-size: 1.2rem;
+    }
+
+    .edit {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-height: 725px) {
+    .main {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .add {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .details p {
+        font-size: 1rem;
+    }
+}

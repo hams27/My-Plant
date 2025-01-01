@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    /* font-family: "Poppins",sans-serif; */
+    /* font-size: 14px; */
+}
+
+h1 {
+    margin: 0 40%;
+}
+
+.nav {
+    margin-left: 70px;
+}
+
+.wrapper {
+    width: 70%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.toast {
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;  /* للسماح باللف عند الشاشات الصغيرة */
+}
+
+.success {
+    border-left: 3px solid #47D764;
+}
+
+.error {
+    border-left: 3px solid #ff355b;
+}
+
+.info {
+    border-left: 3px solid #2F86EB;
+}
+
+.warning {
+    border-left: 3px solid #FFC021;
+}
+
+.error i {
+    color: #ff355b;
+}
+
+.info i {
+    color: #2F86EB;
+}
+
+.warning i {
+    color: #FFC021;
+}
+
+.toast:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.outer-container {
+    width: 20px;
+    align-self: center;
+}
+
+.outer-container i {
+    font-size: 35px;
+}
+
+.success i {
+    color: #47D764;
+}
+
+.inner-container p:first-child {
+    color: #101020;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.inner-container p:last-child {
+    font-size: 12px;
+    font-weight: 400;
+    color: #656565;
+}
+
+.toast button {
+    align-self: flex-start;
+    background-color: transparent;
+    font-size: 20px;
+    color: #656565;
+    line-height: 0;
+    cursor: pointer;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 1024px) {
+    .wrapper {
+        width: 90%; /* تقليل العرض على الشاشات الصغيرة */
+    }
+
+    .toast {
+        flex-direction: column; /* جعل التوست عموديًا عند الشاشات الصغيرة */
+        align-items: flex-start; /* محاذاة العناصر لليسار */
+    }
+
+    .toast button {
+        font-size: 18px; /* تقليل حجم الخط */
+    }
+
+    .outer-container i {
+        font-size: 30px; /* تقليل حجم الأيقونة */
+    }
+
+    .inner-container p:first-child {
+        font-size: 14px; /* تقليل حجم الخط */
+    }
+
+    .inner-container p:last-child {
+        font-size: 10px; /* تقليل حجم الخط */
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%; /* أخذ العرض الكامل على الشاشات الأصغر */
+        padding: 0 20px; /* إضافة بعض الحواف */
+    }
+
+    .toast {
+        flex-direction: column; /* جعل التوست عموديًا */
+    }
+
+    .toast button {
+        font-size: 16px; /* تقليل حجم الخط أكثر */
+    }
+
+    .outer-container i {
+        font-size: 25px; /* تقليل الأيقونة */
+    }
+
+    .inner-container p:first-child {
+        font-size: 12px; /* تقليل حجم الخط */
+    }
+
+    .inner-container p:last-child {
+        font-size: 10px; /* تقليل حجم الخط */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        margin: 0 10%; /* تقليل المسافة حول العنوان */
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    .toast {
+        padding: 10px; /* تقليل الحشوة */
+        font-size: 14px; /* تقليل حجم الخط في التوست */
+    }
+
+    .outer-container i {
+        font-size: 20px; /* تقليل حجم الأيقونة بشكل أكبر */
+    }
+
+    .inner-container p:first-child {
+        font-size: 12px; /* تقليل حجم الخط */
+    }
+
+    .inner-container p:last-child {
+        font-size: 8px; /* تقليل حجم الخط */
+    }
+
+    .toast button {
+        font-size: 14px; /* تقليل حجم الخط */
+    }
+}

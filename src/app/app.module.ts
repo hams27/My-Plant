@@ -11,7 +11,9 @@ import { MenuComponent } from './menu/menu.component';
 import{FormsModule}from '@angular/forms';
 import { AnalysticsComponent } from './analystics/analystics.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NotficationsComponent } from './notfications/notfications.component'
+import { NotficationsComponent } from './notfications/notfications.component';
+import { NavComponent } from './nav/nav.component';
+import { HistoryComponent } from './history/history.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,8 @@ import { NotficationsComponent } from './notfications/notfications.component'
     AnalysticsComponent,
     ProfileComponent,
     NotficationsComponent,
+    NavComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,
